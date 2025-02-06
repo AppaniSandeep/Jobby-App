@@ -1,0 +1,8 @@
+.header-bg-container {
+  display: flex;
+  justify-content: space-around;
+}
+.links-container {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,9 @@
+.jobcard-bg-container {
+  background-color: '#2c364c';
+  background-size: cover;
+  height: 300px;
+  width: 600px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}

@@ -1,25 +1,37 @@
+import './index.css'
+
 const FiltersGroup = props => {
   const renderTypeOfEmploymentFilterList = () => {
     const {employmentTypesList} = props
     return employmentTypesList.map(employmentType => {
-      const {changeEmploymentType} = props
-      const onClickEmploymentTypeItem = () =>
-        changeEmploymentType(employmentType.employmentTypeId)
+      const {changeEmploymentType, activeEmploymentTypeIds} = props
+      const onChangeEmplomentTypeItem = event =>
+        changeEmploymentType(event.target.value)
+      const inputId = `employment-${employmentType.employmentTypeId}`
+      const isChecked = activeEmploymentTypeIds.includes(
+        employmentType.employmentTypeId,
+      )
       return (
-        <li
-          key={employmentType.employmentTypeId}
-          onClick={onClickEmploymentTypeItem}
-        >
-          <input type="checkbox" id="checkbox" />
-          <label htmlFor="checkbox">{employmentType.label}</label>
+        <li className="filter-item" key={employmentType.employmentTypeId}>
+          <input
+            type="checkbox"
+            id={inputId}
+            onChange={onChangeEmplomentTypeItem}
+            value={employmentType.employmentTypeId}
+            checked={isChecked}
+            className="checkbox"
+          />
+          <label htmlFor={inputId} className="label">
+            {employmentType.label}
+          </label>
         </li>
       )
     })
   }
   const renderTypeOfEmploymentFilters = () => (
-    <div>
-      <h1>Type of Employment</h1>
-      <ul>{renderTypeOfEmploymentFilterList()}</ul>
+    <div className="filter-card">
+      <h1 className="filter-heading">Type of Employment</h1>
+      <ul className="filter-list">{renderTypeOfEmploymentFilterList()}</ul>
     </div>
   )
 
@@ -27,31 +39,40 @@ const FiltersGroup = props => {
     const {salaryRangesList} = props
 
     return salaryRangesList.map(salaryRange => {
-      const {changeSalaryRange} = props
-      const onClickChangeSalaryRangeItem = () =>
-        changeSalaryRange(salaryRange.salaryRangeId)
+      const {changeSalaryRange, activeSalaryRangeId} = props
+      const onChnageSalaryRangeItem = event =>
+        changeSalaryRange(event.target.value)
+      const inputId = `salaryRange-${salaryRange.salaryRangeId}`
+      const isChecked = activeSalaryRangeId === salaryRange.salaryRangeId
       return (
-        <li
-          key={salaryRange.salaryRangeId}
-          onClick={onClickChangeSalaryRangeItem}
-        >
-          <input type="radio" id="range" />
-          <label htmlFor="range">{salaryRange.label}</label>
+        <li className="filter-item" key={salaryRange.salaryRangeId}>
+          <input
+            type="radio"
+            id={inputId}
+            onChange={onChnageSalaryRangeItem}
+            value={salaryRange.salaryRangeId}
+            name="salary"
+            checked={isChecked}
+            className="radio"
+          />
+          <label htmlFor={inputId} className="label">
+            {salaryRange.label}
+          </label>
         </li>
       )
     })
   }
 
   const renderSalaryRangeFilter = () => (
-    <div>
-      <h1>Salary Range</h1>
-      <ul>{renderSalaryRangeFilterList()}</ul>
+    <div className="filter-card">
+      <h1 className="filter-heading">Salary Range</h1>
+      <ul className="filter-list">{renderSalaryRangeFilterList()}</ul>
     </div>
   )
   return (
-    <div>
+    <div className="filter-container">
       {renderTypeOfEmploymentFilters()}
-      <hr />
+      <hr className="line" />
       {renderSalaryRangeFilter()}
     </div>
   )

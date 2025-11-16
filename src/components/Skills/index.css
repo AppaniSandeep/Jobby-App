@@ -1,0 +1,37 @@
+.skill-item {
+  list-style: none;
+  margin-right: 30px;
+}
+.skill-item-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.skill-image {
+  height: 50px;
+  width: 50px;
+}
+
+.skill {
+  font-size: 16px;
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+/* Media queries for the below medium size devices */
+
+@media screen and (max-width: 767px) {
+  .skill-item {
+    margin-right: 20px;
+  }
+  .skill-item-card {
+    gap: 10px;
+  }
+  .skill-image {
+    height: 25px;
+    width: 25px;
+  }
+  .skill {
+    font-size: 14px;
+  }
+}

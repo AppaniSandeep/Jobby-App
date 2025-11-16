@@ -1,4 +1,6 @@
 import {Link} from 'react-router-dom'
+import {FaStar, FaMapMarkerAlt} from 'react-icons/fa'
+import {MdLocalPostOffice} from 'react-icons/md'
 
 import './index.css'
 
@@ -15,27 +17,37 @@ const JobCard = props => {
     title,
   } = jobCardDetails
   return (
-    <li>
-      <Link to={`/jobs/${id}`}>
+    <li className="job-card-item">
+      <Link to={`/jobs/${id}`} className="link">
         <div className="jobcard-bg-container">
-          <div>
-            <img src={companyLogoUrl} alt="company logo" />
-            <div>
-              <h1>{title}</h1>
-              <p>{rating}</p>
+          <div className="profile-container">
+            <img
+              src={companyLogoUrl}
+              alt="company logo"
+              className="company-logo"
+            />
+            <div className="title-rating-card">
+              <h1 className="title">{title}</h1>
+              <p className="rating">
+                <FaStar className="star-icon" /> {rating}
+              </p>
             </div>
           </div>
-          <div>
-            <div>
-              <p>{location}</p>
-              <p>{employmentType}</p>
+          <div className="employment-details-container">
+            <div className="location-employmenttype-card">
+              <p className="location">
+                <FaMapMarkerAlt /> {location}
+              </p>
+              <p className="employmenttype">
+                <MdLocalPostOffice /> {employmentType}
+              </p>
             </div>
-            <p>{packagePerAnnum}LPA</p>
+            <p className="package">{packagePerAnnum}</p>
           </div>
-          <hr />
-          <div>
-            <h1>Description</h1>
-            <p>{jobDescription}</p>
+          <hr className="line" />
+          <div className="job-description-container">
+            <h1 className="description-heading">Description</h1>
+            <p className="description">{jobDescription}</p>
           </div>
         </div>
       </Link>

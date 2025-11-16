@@ -37,8 +37,10 @@ class ProfileSection extends Component {
     const data = await response.json()
     if (response.ok) {
       const updatedData = this.getFormattedData(data.profile_details)
-      this.setState({profileData: updatedData})
-      this.setState({apiStatus: apiStatusConstants.success})
+      this.setState({
+        profileData: updatedData,
+        apiStatus: apiStatusConstants.success,
+      })
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
@@ -46,17 +48,18 @@ class ProfileSection extends Component {
 
   renderProfileSuccessView = () => {
     const {profileData} = this.state
-    console.log(profileData)
     return (
-      <div>
+      <>
         <ProfileCard profileDetails={profileData} />
-      </div>
+      </>
     )
   }
 
   renderProfileFailureView = () => (
     <div>
-      <button type="button">Retry</button>
+      <button type="button" onClick={this.getProfileDetails}>
+        Retry
+      </button>
     </div>
   )
 

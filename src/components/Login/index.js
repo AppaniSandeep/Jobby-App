@@ -2,11 +2,13 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 
+import './index.css'
+
 class Login extends Component {
-  state = {userName: '', password: '', showSubmitError: false, errorMsg: ''}
+  state = {username: '', password: '', showSubmitError: false, errorMsg: ''}
 
   onChangeUserName = event => {
-    this.setState({userName: event.target.value})
+    this.setState({username: event.target.value})
   }
 
   onChangePassword = event => {
@@ -26,8 +28,8 @@ class Login extends Component {
 
   submitForm = async event => {
     event.preventDefault()
-    const {userName, password} = this.state
-    const userDetails = {username: userName, password: password}
+    const {username, password} = this.state
+    const userDetails = {username, password}
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
@@ -42,40 +44,45 @@ class Login extends Component {
   }
 
   render() {
-    const {userName, password, showSubmitError, errorMsg} = this.state
+    const {username, password, showSubmitError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
     return (
-      <div>
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-          alt="website logo"
-        />
-        <form onSubmit={this.submitForm}>
-          <label htmlFor="userName">USERNAME</label>
-          <br />
+      <div className="login-bg-container">
+        <form className="login-form" onSubmit={this.submitForm}>
+          <img
+            className="website-logo"
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+            alt="website logo"
+          />
+          <label className="label" htmlFor="username">
+            USERNAME
+          </label>
           <input
+            className="input"
             type="text"
-            id="userName"
+            id="username"
             placeholder="Username"
-            value={userName}
+            value={username}
             onChange={this.onChangeUserName}
           />
-          <br />
-          <label htmlFor="password">PASSWORD</label>
-          <br />
+          <label className="label" htmlFor="password">
+            PASSWORD
+          </label>
           <input
+            className="input"
             type="password"
             id="password"
             placeholder="Password"
             value={password}
             onChange={this.onChangePassword}
           />
-          <br />
-          <button type="submit">Login</button>
-          {showSubmitError && <p>{errorMsg}</p>}
+          <button className="submit-btn" type="submit">
+            Login
+          </button>
+          {showSubmitError && <p className="error-msg">*{errorMsg}</p>}
         </form>
       </div>
     )

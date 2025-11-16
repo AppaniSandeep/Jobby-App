@@ -1,0 +1,98 @@
+.similar-job-item {
+  list-style: none;
+  background-color: #272727;
+  background-size: cover;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.similar-job-container {
+  display: flex;
+  flex-direction: column;
+}
+.similar-profile-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.similar-company-logo {
+  height: 50px;
+  width: 50px;
+}
+.similar-title-rating-card {
+  display: flex;
+  flex-direction: column;
+}
+.similar-title {
+  font-size: 20px;
+  color: #f8fafc;
+  margin-bottom: -12px;
+}
+.similar-rating {
+  font-size: 18px;
+  color: #f8fafc;
+}
+.similar-description-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.similar-description-heading {
+  font-size: 20px;
+  color: #f8fafc;
+}
+.similar-text-description {
+  font-size: 16px;
+  color: #cbd5e1;
+}
+.similar-bottom-card {
+  display: flex;
+  gap: 20px;
+}
+
+.similar-location {
+  font-size: 16px;
+  color: #cbd5e1;
+}
+.similar-employment {
+  font-size: 16px;
+  color: #cbd5e1;
+}
+
+/* Media queries for the below medium size devices */
+
+@media screen and (max-width: 767px) {
+  .similar-job-item {
+    width: auto;
+    padding: 10px;
+    margin: 5px;
+  }
+  .similar-company-logo {
+    height: 45px;
+    width: 45px;
+  }
+  .similar-title {
+    font-size: 16px;
+    margin-bottom: -10px;
+  }
+  .similar-rating {
+    font-size: 14px;
+  }
+
+  .similar-description-heading {
+    font-size: 15px;
+    margin-bottom: -10px;
+  }
+  .similar-text-description {
+    font-size: 14px;
+  }
+  .similar-location {
+    font-size: 14px;
+  }
+  .similar-employment {
+    font-size: 14px;
+  }
+}

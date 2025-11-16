@@ -1,0 +1,237 @@
+/* Failure view styles */
+
+.job-details-bg-container {
+  background-color: #000000;
+  background-size: cover;
+  padding: 20px;
+}
+
+.top-container {
+  background-color: #272727;
+  background-size: cover;
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.job-profile-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.job-details-logo {
+  height: 60px;
+  width: 60px;
+}
+.profile-title-rating-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-item-title {
+  font-size: 20px;
+  color: white;
+  margin-bottom: -5px;
+  margin-top: -5px;
+}
+.job-details-rating {
+  font-size: 16px;
+  color: white;
+}
+.job-details-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-emoployment-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.map-icon {
+  font-size: 20px;
+  color: white;
+}
+
+.job-type-icon {
+  font-size: 20px;
+  color: white;
+}
+
+.job-location {
+  font-size: 14px;
+  color: white;
+}
+
+.job-type {
+  font-size: 14px;
+  color: white;
+}
+
+.job-package {
+  font-size: 18px;
+  color: white;
+  margin-right: 20px;
+}
+.description-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.job-description {
+  font-size: 26px;
+  color: white;
+  margin-left: 20px;
+}
+.hyper-link {
+  font-size: 16px;
+  color: #6366f1;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.job-description-text {
+  font-size: 18px;
+  color: white;
+  margin: 20px 20px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-heading {
+  font-size: 22px;
+  color: white;
+  margin-left: 20px;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-left: -20px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-heading {
+  font-size: 22px;
+  color: white;
+  margin-left: 20px;
+}
+.description-image-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.about-image {
+  height: 250px;
+  width: 300px;
+}
+
+/* Similar job list styles */
+
+.similar-jobs {
+  display: flex;
+  flex-direction: column;
+}
+.similar-jobs-main-heading {
+  font-size: 22px;
+  color: white;
+  margin-left: 20px;
+}
+.similar-jobs-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -25px;
+}
+
+/* Media queries for the Below medium size devices */
+
+@media screen and (max-width: 767px) {
+  .top-container {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    padding: 10px;
+  }
+  .job-profile-container {
+    margin-top: 10px;
+    gap: 10px;
+    margin-bottom: -20px;
+  }
+  .job-details-logo {
+    height: 45px;
+    width: 45px;
+  }
+  .job-item-title {
+    font-size: 16px;
+    margin-bottom: -8px;
+  }
+  .job-location {
+    font-size: 12px;
+  }
+  .job-type {
+    font-size: 12px;
+  }
+  .map-icon {
+    font-size: 18px;
+  }
+  .job-type-icon {
+    font-size: 18px;
+  }
+  .job-package {
+    font-size: 18px;
+  }
+  .job-description {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .job-description-text {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .skills-container {
+    margin-top: -10px;
+  }
+  .skills-heading {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .skills-list {
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .skills-list {
+    margin-left: -25px;
+  }
+  .about-heading {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .description-image-card {
+    flex-direction: column;
+  }
+  .about-image {
+    width: 95%;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+}
